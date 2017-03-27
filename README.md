@@ -1,14 +1,11 @@
-# PluginTemplate
+# EasyDump
 
-Plugin template for x64dbg.
+Currently in development. The following commands are supported:
 
-## Installation
+## logA addr, [size]
 
-Grab the latest [release](https://github.com/x64dbg/PluginTemplate/releases/latest) and copy `PluginTemplate.zip` to `Documents\Visual Studio 2013\Templates\ProjectTemplates\Visual C++ Project\`
+Log an ANSI string pointed to by "addr". The size of the buffer in bytes may be specified by "size" argument. This command supports local code page.
 
-## Building
+## logW addr, [size]
 
-1. Use `File -> Export Template...`.
-2. Append the content of `templatefiles.txt` to `<TemplateContent>` in `MyTemplate.vstemplate`.
-3. Set `ReplaceParameters="true"` for `plugin.h` in `MyTemplate.vstemplate`.
-3. Copy the `pluginsdk\*.lib` inside the ZIP.
+Log an Unicode string pointed to by "addr". The size of the buffer in bytes may be specified by "size" argument.
