@@ -12,6 +12,7 @@ bool pluginStop();
 void pluginSetup();
 //encoding
 std::string ToUtf8(std::wstring text);
+std::wstring FromUtf8(std::string text);
 std::wstring FromLCP(std::string text);
 std::wstring FromResourceToUtf16(int id);
 std::string FromResourceToUtf8(int id);

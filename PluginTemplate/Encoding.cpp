@@ -28,6 +28,21 @@ std::string ToUtf8(std::wstring text)
     return returnVal;
 }
 
+std::wstring FromUtf8(std::string text)
+{
+    size_t size = text.size();
+    wchar_t* buffer = new wchar_t[size + 1];
+    memset(buffer, 0, size * sizeof(wchar_t));
+    if(MultiByteToWideChar(CP_UTF8, 0, text.c_str(), text.size(), buffer, size) == 0){
+        delete[] buffer;
+        return L"(error)";
+    }
+    buffer[size] = 0;
+    std::wstring returnVal = std::wstring(buffer);
+    delete[] buffer;
+    return returnVal;
+}
+
 std::wstring FromLCP(std::string text)
 {
     size_t bufsize = text.size();
